@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import {useState, useEffect} from "react";
 import './App.css';
 
+import Header from "./components/header";
+import Table from "./components/table";
+
 function App() {
+  
+  const DATA_API = `https://api.coincap.io/v2/assets?limit=20`;
+
+  const [coins, setCoins] = useState([])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header></Header>
+      <Table></Table>
     </div>
   );
 }
